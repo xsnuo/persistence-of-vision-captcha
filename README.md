@@ -1,37 +1,84 @@
-# persistence-of-vision-captcha
+# xsn-tool
 
-#### 介绍
-利用视觉暂留制作的图片验证码
+这是一个私人的Java工具包，里面包含了一些非常简单且基础的Java工具。由于这个小工具在很多项目中都使用到了，所以单独把它开源发布，方便引用。
 
-#### 软件架构
-软件架构说明
+## Maven引入
 
+```xml
+<dependency>
+    <groupId>com.xuesinuo</groupId>
+    <artifactId>xtool</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
-#### 安装教程
+## Np工具类介绍
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+Np是一个融入了常用判断条件的，忽略空指针的对象操作工具类。
 
-#### 使用说明
+类似Optional的用法，功能上做了简化并扩展了业务场景常用的判断条件。
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+### e.g.0 基本用法
 
-#### 参与贡献
+一个最简单的例子：忽略空指针连续调用多级Getter获取嵌套的属性值：
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+```java
+Np.i(MainPojo).x(x -> x.getChildPojo()).x(x -> x.getName()).o("Default Name");
+```
 
+### e.g.1 相等比较、数值比较
 
-#### 特技
+`.eq()`, `.notEq()`, `.in()`, `.notIn()`用于对象比较，NULL值比较，数值比较。
+`.gt()`, `.ge()`, `.lt()`, `.le()`用于数值比较。
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+```java
+BigDecimal a = new BigDecimal("12");
+BigDecimal b = new BigDecimal("12.0");
+a.equals(b);// False
+Np.i(a).eq(b);// True
+Np.i(a).gt(b);// False
+Np.i(a).lt(b);// False
+Np.i(a).ge(b);// True
+Np.i(a).ge(b);// True
+```
+
+```java
+Obejct a = new Object();
+Object b = new Object();
+a.equals(b);// False
+Np.i(a).eq(b);// False
+Np.i(a).gt(b);// False
+Np.i(a).lt(b);// False
+Np.i(a).ge(b);// False
+Np.i(a).ge(b);// False
+```
+
+```java
+Obejct a = null;
+Object b = null;
+a.equals(b);// NullPointerException
+Np.i(a).eq(b);// True
+Np.i(a).gt(b);// False
+Np.i(a).lt(b);// False
+Np.i(a).ge(b);// False
+Np.i(a).ge(b);// False
+```
+
+```java
+BigDecimal a = new BigDecimal("1");
+BigDecimal b = new BigDecimal("1.0");
+BigDecimal c = new BigDecimal("2");
+BigDecimal d = new BigDecimal("3");
+BigDecimal e = null;
+Collection<BigDecimal> list = Arrays.asList(b,c);
+
+Np.i(a).in(list);// True
+Np.i(a).in(list);// True
+Np.i(a).in(list);// True
+Np.i(d).in(list);// False
+Np.i(e).in(list);// False
+
+Np.i(a).in(b,c,null);// True
+Np.i(d).in(b,c,null);// False
+Np.i(e).in(b,c,null);// True
+```
