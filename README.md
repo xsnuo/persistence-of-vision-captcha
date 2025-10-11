@@ -16,6 +16,10 @@
 
 ## 效果图
 
+带宽原因，效果图可能加载较慢。请等待一下，动图流畅后，方可看到效果，倍率放大后，字符更清晰可见。
+
+![captcha](https://www.xuesinuo.com/img/persistence-of-vision-captcha.gif)
+
 ## 使用示例
 
 最基本的使用案例，很简单：
