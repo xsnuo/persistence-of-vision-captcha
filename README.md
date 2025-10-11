@@ -20,6 +20,8 @@
 
 ![captcha](https://www.xuesinuo.com/img/persistence-of-vision-captcha.gif)
 
+github在线预览效果图可能被压缩，原图请看：<https://www.xuesinuo.com/img/persistence-of-vision-captcha.gif>
+
 ## 使用示例
 
 最基本的使用案例，很简单：
