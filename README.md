@@ -21,6 +21,6 @@
 ```java
 // 创建一张白底的静态验证码图：设置文字内容、图片尺寸、字体、噪点等信息
 BufferedImage image = GifCaptcha.drawOnWhite("TEST", 240, 80, -1, -1, -1, null, 40);
-// 将白底静态验证码图转为视觉暂留动图：设置帧数、颜色、像素合并等信息，输出到OutputStream
+// 将白底静态验证码图转为视觉暂留动图：设置帧数、颜色、像素合并等信息，输出为OutputStream
 GifCaptcha.buildByImage(image, -1, -1, null, new FileOutputStream("mygif.gif"));
 ```
