@@ -10,7 +10,7 @@
   <name>persistence-of-vision-captcha</name>
   <description>persistence of vision captcha.</description>
 
-  <url>https://gitee.com/xue_da_nuo/persistence-of-vision-captcha.git</url>
+  <url>https://github.com/xsnuo/persistence-of-vision-captcha.git</url>
   <organization>
     <name>xuesinuo</name>
     <url>https://www.xuesinuo.com</url>
@@ -29,16 +29,16 @@
       <id>xuesinuo</id>
       <name>xuesinuo</name>
       <email>nayukiminace@163.com</email>
-      <url>https://gitee.com/xue_da_nuo/persistence-of-vision-captcha.git</url>
+      <url>https://github.com/xsnuo/persistence-of-vision-captcha.git</url>
       <organization>xuesinuo</organization>
       <organizationUrl>https://www.xuesinuo.com</organizationUrl>
     </developer>
   </developers>
 
   <scm>
-    <connection>scm:git:https://gitee.com/xue_da_nuo/persistence-of-vision-captcha.git.git</connection>
-    <developerConnection>scm:git:ssh://git@gitee.com:xue_da_nuo/xsn-tool.git</developerConnection>
-    <url>https://gitee.com/xue_da_nuo/persistence-of-vision-captcha.git</url>
+    <connection>scm:git:https://github.com/xsnuo/persistence-of-vision-captcha.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:xsnuo/persistence-of-vision-captcha.git</developerConnection>
+    <url>https://github.com/xsnuo/persistence-of-vision-captcha.git</url>
   </scm>
 
   <properties>
